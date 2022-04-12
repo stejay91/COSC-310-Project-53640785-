@@ -42,3 +42,23 @@ If the text is negative, tell a joke to the user.
 
 If all the above items cannot be done. Say sorry to the user.
 
+INDIVIDUAL PROJECT CHANGES
+---
+Implementation of Wikipedia API:
+- The chatbot will now be able to aid the user with a quick wikipedia search scanning for the keyword "learn more".
+- From there the bot will ask you "What would you like to learn about?" and the user will be able to search for whatever they are looking to inquire about.
+- It will return a page title as well as a page summary for the given topic.
+- The code is in a loop so it will continue to ask you if you would like to learn about other topics until the user is satisfied.
+
+Implementation of Google Translate API:
+- The chatbot will also be able to translate any phrase you give it into any language the user is looking for scanning for the keyword "translate".
+- From there the bot will now ask you "What phrase would you like to translate?" and the user is able to input any phrase they would like to translate.
+- The bot will auto detect and return the language the phrase that the user has used.
+- It will then return a list of languages with code words that the user will be able to choose from to translate to and promt them to input the code.
+- It will return the phrase the user inputed, the phrases language, the translated version of the phrase, as well as the translated language of choice.
+- The code is in a loop so it will continue to ask you if you would like to translate more phrases until the user is satisfied.
+
+LIST OF MODULES TO INSTALL BEFORE RUNNING
+---
+- pip install googletrans==4.0.0-rc1
+- python3 -m pip install wikipedia-api
