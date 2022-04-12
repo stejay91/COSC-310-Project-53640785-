@@ -1,14 +1,16 @@
 from Returns import Returns
 from Refund import refund
-#from order_again import OrderAgain
-#from concierge import Concierge
+from order_again import OrderAgain
+from concierge import Concierge
 from test import load_qna, process
 import time
+from Wikipedia_API import search
+from Google_Translate_API import trans
 
 def main():
     retbot = Returns()
-    #orderAgain = OrderAgain()
-    #concierge = Concierge()
+    orderAgain = OrderAgain()
+    concierge = Concierge()
     print("Hello!")
     time.sleep(2)
     howareyou = str(input("How are you today?"))
@@ -25,17 +27,23 @@ def main():
         elif "refund" in response.lower():
             time.sleep(2)
             refund()
-        #elif "order again" in response.lower():
-            #time.sleep(2)
-            #orderAgain.order_again_chat()
-        #elif "concierge" in response.lower():
-            #time.sleep(2)
-            #concierge.concierge_chat()
+        elif "order again" in response.lower():
+            time.sleep(2)
+            orderAgain.order_again_chat()
+        elif "concierge" in response.lower():
+            time.sleep(2)
+            concierge.concierge_chat()
         elif "question" in response.lower():
             time.sleep(2)
             print("hi what can i help you with ?")
             message = input()
             process(message)
+        elif "learn more" in response.lower():
+            time.sleep(2)
+            search()
+        elif "translate" in response.lower():
+            time.sleep(2)
+            trans()
 
         time.sleep(2)
         yesorno = str(input("Is there anything else I can help you with? (yes/no)"))
@@ -46,9 +54,6 @@ def main():
             time.sleep(2)
             print("Thank you for your time! Goodbye!")
             break
-
-
-
 
 
 main()
